@@ -16,5 +16,11 @@
         
         <h1>Zad2: Cześć, <c:out value="${os.firstName} ${os.lastName}"/>!</h1>
          <a href="mailto:<c:out value="${os.email}"/>">click to mail!</a>
+         
+         <c:forEach items="${dniTygodnia}" var="dzien">
+            <p>
+                ${dzien}
+            </p>
+        </c:forEach>
     </body>
 </html>

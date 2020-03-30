@@ -2,6 +2,8 @@ package tpsi.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +21,14 @@ public class HelloServlet extends HttpServlet {
         Person osoba = new Person(firstName, lastName, email);
         request.setAttribute("os", osoba);
         
+        List<String> dni = new ArrayList<>();
+        dni.add("Poniedziałek");
+        dni.add("Wtorek");
+        dni.add("Środa");
+        dni.add("Czwartek");
+        dni.add("Piątek");
         
+        request.setAttribute("dniTygodnia", dni);
         request.getRequestDispatcher("hello.jsp").forward(request, response);
     }
 }
