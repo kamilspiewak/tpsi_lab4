@@ -13,8 +13,13 @@ public class HelloServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String imie = request.getParameter("imie");
-        request.setAttribute("imie", imie);
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String email = request.getParameter("email");
+        Person osoba = new Person(firstName, lastName, email);
+        request.setAttribute("os", osoba);
+        
+        
         request.getRequestDispatcher("hello.jsp").forward(request, response);
     }
 }
